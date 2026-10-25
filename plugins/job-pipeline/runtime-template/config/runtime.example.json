@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "submission_mode": "review_only",
+  "browser_profile": "",
+  "master_cv_path": "",
+  "master_cv_sha256": "",
+  "onboarding": {"complete": false, "creator_ready": false},
+  "auto_apply_approved_at": null
+}

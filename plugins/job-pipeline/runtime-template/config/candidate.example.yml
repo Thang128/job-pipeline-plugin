@@ -1,0 +1,13 @@
+schema_version: 1
+identity:
+  full_name: ""
+  email: ""
+  phone: ""
+  residence_country: ""
+current_employer: ""
+employment_status: ""
+work_authorization: []
+languages: []
+notice_period: ""
+known_answers: {}
+career_evidence: []

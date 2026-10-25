@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "job-pipeline",
+  "version": "0.1.0",
+  "description": "A local, evidence-led job search and application workflow with private candidate data and explicit submission controls.",
+  "author": {
+    "name": "Job Pipeline contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jobs",
+    "applications",
+    "career",
+    "privacy"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/setup/SKILL.md",
+      "interface": {
+        "displayName": "Job Pipeline",
+        "shortDescription": "Search, tailor and track applications",
+        "longDescription": "A local, evidence-led job search and application workflow with private candidate data and explicit submission controls.",
+        "developerName": "Job Pipeline contributors",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ]
+      }
+    }
+  }
+}

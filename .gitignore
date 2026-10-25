@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.work/
+dist/
+**/private/
+**/pipeline.db*
+**/pipeline_state.json
+**/Documents/generated/
+*.log
+.superpowers/

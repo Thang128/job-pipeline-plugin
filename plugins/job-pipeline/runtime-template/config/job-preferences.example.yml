@@ -1,0 +1,19 @@
+schema_version: 1
+target_titles: []
+role_families: []
+industries: []
+seniority:
+  minimum: ""
+  maximum: ""
+countries: []
+work_modes: []
+salary:
+  minimum: null
+  currency: ""
+include_keywords: []
+exclude_keywords: []
+excluded_employers: []
+preferred_company_types: []
+vie:
+  enabled: false
+  eligible: false

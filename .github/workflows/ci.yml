@@ -1,0 +1,20 @@
+name: Package and policy checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned Python dependencies
+        run: python -m pip --isolated install -r plugins/job-pipeline/runtime-template/requirements.txt
+      - name: Check release boundary
+        run: python tools/release.py
+      - name: Check package, bootstrap and policy regressions
+        run: python -B -m pytest -q -p no:cacheprovider tests plugins/job-pipeline/runtime-template/Pipeline/tests/test_pipeline_settings.py

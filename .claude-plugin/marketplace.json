@@ -1,0 +1,15 @@
+{
+  "name": "job-pipeline-tools",
+  "owner": {
+    "name": "Job Pipeline contributors"
+  },
+  "plugins": [
+    {
+      "name": "job-pipeline",
+      "source": "./plugins/job-pipeline"
+    }
+  ],
+  "metadata": {
+    "description": "Private local job-search and application workflows for Claude and Codex."
+  }
+}

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>{{ stylesheet }}</style>
+</head>
+<body>
+{% for page in pages %}
+  <section class="cv-page page-{{ page['page_number'] }}">
+  {% for block in page['blocks'] %}
+    {% if block['kind'] == 'text' %}<div class="cv-block" style="{{ block['style'] }}">{{ block['text'] }}</div>{% endif %}
+    {% if block['kind'] == 'image' %}<img class="cv-image" alt="" src="{{ block['src'] }}" style="{{ block['style'] }}">{% endif %}
+  {% endfor %}
+  {% for rule in page['rules'] %}<div class="cv-rule" style="{{ rule['style'] }}"></div>{% endfor %}
+  </section>
+{% endfor %}
+</body>
+</html>

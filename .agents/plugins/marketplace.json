@@ -1,0 +1,15 @@
+{
+  "name": "job-pipeline-tools",
+  "interface": {
+    "displayName": "Job Pipeline tools"
+  },
+  "plugins": [
+    {
+      "name": "job-pipeline",
+      "source": {
+        "source": "local",
+        "path": "./plugins/job-pipeline"
+      }
+    }
+  ]
+}

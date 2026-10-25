@@ -1,0 +1,11 @@
+.venv/
+.pytest_cache/
+private/
+Pipeline/pipeline.db
+Pipeline/pipeline.db-shm
+Pipeline/pipeline.db-wal
+Pipeline/pipeline_state.json
+Documents/generated/
+Desktop-Import/*.zip
+__pycache__/
+*.py[cod]

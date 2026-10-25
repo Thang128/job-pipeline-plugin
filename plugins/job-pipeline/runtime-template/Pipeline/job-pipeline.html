@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Pipeline Starter</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Dashboard navigation">
+      <p class="brand">JOB PIPELINE STARTER</p>
+      <nav>
+        <button type="button" aria-label="Show overview" aria-controls="overview-view" aria-current="page" data-view="overview-view">Overview</button>
+        <button type="button" aria-label="Show strategy" aria-controls="strategy-view" data-view="strategy-view">Strategy</button>
+        <button type="button" aria-label="Show jobs" aria-controls="jobs-view" data-view="jobs-view">Jobs</button>
+        <button type="button" aria-label="Show history" aria-controls="history-view" data-view="history-view">History</button>
+      </nav>
+      <p id="connection-status" role="status">Local dashboard</p>
+    </aside>
+    <main>
+      <header><h1>Job Pipeline Starter</h1></header>
+      <div id="onboarding-banner" class="banner" role="status" aria-live="polite" hidden></div>
+
+      <section class="view" id="overview-view" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Overview</h2>
+        <div id="summary-cards" class="summary-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="view" id="strategy-view" aria-labelledby="strategy-heading" hidden>
+        <h2 id="strategy-heading">Strategy</h2>
+        <p id="settings-version">Version 0</p>
+        <form id="settings-form">
+          <fieldset><legend>Role families</legend><div id="role-rows"></div><button id="add-role" type="button" aria-label="Add role family">Add role</button></fieldset>
+          <fieldset><legend>Countries</legend><div id="country-rows"></div><button id="add-country" type="button" aria-label="Add country">Add country</button></fieldset>
+          <div class="form-grid">
+            <label for="minimum-salary-amount">Minimum salary</label><input id="minimum-salary-amount" type="number" min="0" step="1000">
+            <label for="minimum-salary-currency">Salary currency</label><input id="minimum-salary-currency" type="text" maxlength="3">
+            <label for="minimum-seniority">Minimum seniority</label>
+            <select id="minimum-seniority"><option value="entry">Entry</option><option value="mid">Mid</option><option value="senior">Senior</option><option value="lead_manager">Lead / manager</option><option value="director_executive">Director / executive</option></select>
+            <label for="maximum-seniority">Maximum seniority</label>
+            <select id="maximum-seniority"><option value="entry">Entry</option><option value="mid">Mid</option><option value="senior">Senior</option><option value="lead_manager">Lead / manager</option><option value="director_executive">Director / executive</option></select>
+            <label for="exclude-unknown-seniority">Exclude jobs with unknown seniority</label><input id="exclude-unknown-seniority" type="checkbox">
+            <label for="include-keywords">Include keywords</label><textarea id="include-keywords" rows="3"></textarea>
+            <label for="exclude-keywords">Exclude keywords</label><textarea id="exclude-keywords" rows="3"></textarea>
+            <label for="excluded-employers">Employer exclusions</label><textarea id="excluded-employers" rows="3"></textarea>
+            <label for="prioritize-large-groups">Prefer selected large groups</label><input id="prioritize-large-groups" type="checkbox">
+            <label for="large-group-employers">Large-group employers</label><textarea id="large-group-employers" rows="3"></textarea>
+            <label for="vie-enabled">Enable VIE</label><input id="vie-enabled" type="checkbox">
+            <label for="score-threshold">Score threshold</label><input id="score-threshold" type="number" min="0" max="100">
+            <label for="daily-submission-cap">Daily submission cap</label><input id="daily-submission-cap" type="number" min="0" max="50">
+          </div>
+          <div class="actions">
+            <button id="preview-settings" type="button" aria-label="Preview settings">Preview</button>
+            <button id="save-settings" type="submit" aria-label="Save settings" data-onboarding-required disabled>Save settings</button>
+            <button id="retry-export" type="button" aria-label="Retry dashboard export" hidden>Retry export</button>
+          </div>
+          <p id="preview-result" role="status"></p>
+          <p id="action-status" role="status" aria-live="assertive"></p>
+        </form>
+      </section>
+
+      <section class="view" id="jobs-view" aria-labelledby="jobs-heading" hidden>
+        <h2 id="jobs-heading">Jobs</h2>
+        <div id="job-list" class="job-list"></div>
+        <div class="actions">
+          <button id="jobs-previous" type="button" aria-label="Previous jobs page">Previous</button>
+          <span id="jobs-page" aria-live="polite"></span>
+          <button id="jobs-next" type="button" aria-label="Next jobs page">Next</button>
+        </div>
+      </section>
+
+      <section class="view" id="history-view" aria-labelledby="history-heading" hidden>
+        <h2 id="history-heading">Settings history</h2>
+        <div id="history-list"></div>
+        <div class="actions">
+          <button id="history-previous" type="button" aria-label="Previous history page">Previous</button>
+          <span id="history-page" aria-live="polite"></span>
+          <button id="history-next" type="button" aria-label="Next history page">Next</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="dashboard_helpers.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
